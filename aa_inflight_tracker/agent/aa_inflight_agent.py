@@ -11,7 +11,7 @@ class AAInflightAgent:
     def __init__(self):
         self._client = AAInflightClient()
         self._stop_flag = Value('b', False)  # Shared flag to stop the process
-        self.refetch_interval = 5 # Seconds to next fetch
+        self.refetch_interval = 20 # Seconds to next fetch
         self.data_path = os.path.abspath(os.path.join(os.path.dirname(__file__), "../../data"))
         self.flight_status = None
         self.flight_status_update_process = Process(target=self.flight_status_update_worker)
